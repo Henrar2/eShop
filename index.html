@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>eCommerce</title>
+
+    <style>
+        body{
+            margin: 0 ;
+            padding: 0 ;
+            min-height: 100vh;
+            background: linear-gradient(cornflowerblue,white);
+        }
+        header{
+            height: auto;
+        }
+        .navbar-brand{
+            font-family: serif;
+            font-size: xx-large;
+        }
+        #navbar{
+            
+        }
+        main{
+            min-height: 80vh;
+            
+        }
+        form{ 
+
+        }
+        fieldset{
+            font-size: xx-large;
+            margin-left:5rem;
+        }
+        .desc{
+            font-size: medium;
+        }
+        .form{
+            margin-left:5rem;
+        }
+        .form input{
+            width: 20rem;
+            height: 3rem;
+            margin: 2rem 1rem 2rem 0;
+        }
+        .form [type="submit"]{
+            width: 10rem;
+            height: 3rem;
+        }
+        footer{
+            background-color: gray;
+            min-height: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">eCommerce</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="#">Sign Up</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <form>
+            <fieldset>Reserve your place in the island <div class="desc">From luxurius Villas to traditional places</div></fieldset>
+            <div class="form">
+                <input type="input" placeholder="Location"></input>
+                <input type="input" placeholder="Date"></input>
+                <input type="input" placeholder="People"></input>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
