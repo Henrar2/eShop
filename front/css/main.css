@@ -10,8 +10,14 @@ header{
 }
 .navbar-brand{
     font-family: serif;
-    font-size: xx-large;
+    padding: auto;
+    font-size:2rem !important;
+    transition:500ms;
 }
+.navbar a{
+    transition:500ms;
+}
+
 main{
     min-height: 80vh;    
 }
@@ -37,10 +43,26 @@ fieldset{
     width: 10rem;
     height: 3rem;
 }
+#loginform{
+    /* background-color: gray;
+    left: 50%;
+    top: 50%;
+    margin-left: -10rem;
+    position: absolute;
+    margin-top: 10%;
+    width: 20rem; */
+    width:50%;
+    margin:5% -25% 5% 25%;
+    background: black;
+}
+
 footer{
     height: 20vh;
     bottom: 0;
     background-color: gray;
     min-height: 10vh;
     text-align: center;
+}
+footer div i{
+    font-size: xx-large;
 }

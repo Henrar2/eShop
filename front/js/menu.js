@@ -5,7 +5,7 @@ document.write(`<nav id="navbar" class="navbar navbar-expand-lg navbar-dark" sty
 </button>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav ml-auto">
-    <a class="nav-link" href="login.html" style="color:white;font-size:large;margin-right:2rem;">Login</a>
+    <a class="nav-link" href="#" style="color:white;font-size:large;margin-right:2rem;" onclick=loginform()>Login</a>
     <a class="nav-link" href="#" style="color:white;font-size: large;">Sign Up</a>
   </div>
 </div>
