@@ -1,0 +1,116 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    transition: 400ms;
+    font-size: 1.05rem;
+}
+
+body{
+    background:gray;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 10vh 80vh 11vh;
+    grid-template-areas: 
+    "head head head"
+    "main main main"
+    "footer footer footer";
+}
+header{
+    display: flex;
+    grid-area: head;
+    width: 100%;
+    align-items: center;
+}
+.mainheader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: transparent;
+    width:60%;
+    height:100%;
+}
+.brandlogo{
+
+}
+.searchfield{
+    border-radius:25px;
+    background: white;
+    margin-right:1rem;
+    border:1px solid black;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.searchfield input{
+    border-radius: 25px;
+    border:1px solid transparent;
+    outline: none;
+    width:5rem;
+}
+
+.searchfield span{
+    margin-left:0.5rem;
+}
+.searchtext:focus{
+    width:10rem;
+    
+}
+.navbar{
+    display: block;
+    /* justify-content: center;
+    align-items: center; */
+    width:40%;
+    height:100%;
+}
+.navbar ul{
+    list-style: none;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:1rem;
+    padding-left:1rem;
+}
+.navbar li{
+    cursor:pointer;
+    text-align: center;
+    transition: 10ms;
+}
+.navbar li:hover{
+    color:blue;
+    transition: 10ms;
+}
+.navbar li span{
+    margin-left:6px;
+    transition: 10ms;
+
+}
+
+@media screen and (max-width: 600px){
+    .navbar{
+        position:fixed;
+        bottom: 0;
+        height: auto;
+        width:100%;
+        border-top:1px solid black;
+    }
+    .searchtext:focus{
+        width:10rem;
+    }
+    .mainheader{
+        width:100%;
+    }
+    .navbar li span{
+        display: none;
+    }
+}
+main{
+    grid-area: main;
+
+    width: 100%;
+}
+footer{
+    grid-area: footer;
+
+    width: 100%;
+}
