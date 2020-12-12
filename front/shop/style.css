@@ -1,13 +1,26 @@
 *{
     font-family: 'Roboto', sans-serif;
-    transition: 400ms;
     font-size: 1.05rem;
     --primary:#287094;
     --secondary:#d4d4ce;
     --default:#f6f6f6;
     --dark:#023246;
 }
-    
+button,a,.brandlogo,.navbar,li,i,a{
+    transition: 400ms;
+}
+button{
+    font-family: sans;
+    outline: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--default);
+    background: var(--primary);
+}
+button:hover{
+    color: var(--primary);
+    background: var(--default);
+}
 body{
     background:var(--default);
     margin: 0px;
@@ -114,51 +127,49 @@ main{
     margin:4rem 0;
 }
 .container{
-    display:flex;
-    flex-direction: column;
-    width:100%;
-    background: white;
+    display: flex;
+    margin:1vh 5vw;
+    flex-direction: column ;
+    background: gray;
+
 }
 .featured{
     display: flex;
-    margin:1rem 2rem;
+    background-color: white;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.featured .item{
-    display: flex;
-    flex-direction: column;
-    margin:2rem 2rem;
-    box-shadow:1px 1px 5px 1px black;
-    border-radius: 21px;
-    background:repeating-linear-gradient(180deg,white,rgba(17, 17, 128, 0.397));
-    flex-shrink: 2;
-}
-.item *{
-    margin:1em;
-}
-.item button{
-    margin:1em;
-    width:5em;
-    height:2.5em;
-    border-radius:21px;
-    color:black;
-    background-color: transparent;
-    outline: none;
-}
-.item button:hover{
-    color:white;
-    background-color:black;
-}
-.featured .item:nth-child(1),.featured .item:nth-child(2){
-    max-width:34rem;
-    min-width:12rem;
-    flex-shrink: 1;
-}
-.featured .item:nth-child(4){
+    border:1px solid black;
 
 }
+@media (max-width:900px){
+    .item{
+        min-width: 90vw;
+        min-height:20vh;
+    }
+}
+.item{
+    flex-grow: 1;
+    margin: 1vw;
+    height:250px;
+    border:1px solid black;
+    background:linear-gradient(180deg, #F9F9F9 0%, #9BAED7 100%);
+    
+}
+.item button{
+    float:left;
+    height:20%;
+    width:30%;
+}
+.item img{
+    float:right;
+    max-height:50%;
+}
+.item:nth-child(4){
+    margin: 1vw;
+    flex-grow:1;
+    border:1px solid silver;
+}
+  
 footer{
     grid-area: footer;
     background-color: var(--dark);
