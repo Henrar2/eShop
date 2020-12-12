@@ -2,15 +2,19 @@
     font-family: 'Roboto', sans-serif;
     transition: 400ms;
     font-size: 1.05rem;
+    --primary:#287094;
+    --secondary:#d4d4ce;
+    --default:#f6f6f6;
+    --dark:#023246;
 }
-
+    
 body{
-    background:gray;
+    background:var(--default);
     margin: 0px;
     padding: 0px;
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 10vh 80vh 11vh;
+    grid-template-rows: 10vh auto 11vh;
     grid-template-areas: 
     "head head head"
     "main main main"
@@ -21,6 +25,7 @@ header{
     grid-area: head;
     width: 100%;
     align-items: center;
+    box-shadow: 3px 0px 3px 1px black;
 }
 .mainheader{
     display:flex;
@@ -29,44 +34,44 @@ header{
     background-color: transparent;
     width:60%;
     height:100%;
+    background: var(--default);
 }
 .brandlogo{
-
+    height: inherit;
+    cursor: pointer;
 }
 .searchfield{
     border-radius:25px;
     background: white;
     margin-right:1rem;
     border:1px solid black;
-    box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px whitesmoke;
 }
-
 .searchfield input{
     border-radius: 25px;
     border:1px solid transparent;
     outline: none;
     width:5rem;
 }
-
 .searchfield span{
-    margin-left:0.5rem;
+    margin:0.5rem 1rem 0.5rem 0.5rem;
 }
 .searchtext:focus{
-    width:10rem;
-    
+    width:8rem;
 }
 .navbar{
     display: block;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center; 
     width:40%;
     height:100%;
+    background: var(--default);
 }
 .navbar ul{
     list-style: none;
     display:flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
     margin-right:1rem;
     padding-left:1rem;
@@ -77,7 +82,7 @@ header{
     transition: 10ms;
 }
 .navbar li:hover{
-    color:blue;
+    color:var(--primary);
     transition: 10ms;
 }
 .navbar li span{
@@ -85,8 +90,7 @@ header{
     transition: 10ms;
 
 }
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
     .navbar{
         position:fixed;
         bottom: 0;
@@ -95,9 +99,10 @@ header{
         border-top:1px solid black;
     }
     .searchtext:focus{
-        width:10rem;
+        width:6rem;
     }
     .mainheader{
+        background: var(--default);
         width:100%;
     }
     .navbar li span{
@@ -106,11 +111,56 @@ header{
 }
 main{
     grid-area: main;
+    margin:4rem 0;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    background: white;
+}
+.featured{
+    display: flex;
+    margin:1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.featured .item{
+    display: flex;
+    flex-direction: column;
+    margin:2rem 2rem;
+    box-shadow:1px 1px 5px 1px black;
+    border-radius: 21px;
+    background:repeating-linear-gradient(180deg,white,rgba(17, 17, 128, 0.397));
+    flex-shrink: 2;
+}
+.item *{
+    margin:1em;
+}
+.item button{
+    margin:1em;
+    width:5em;
+    height:2.5em;
+    border-radius:21px;
+    color:black;
+    background-color: transparent;
+    outline: none;
+}
+.item button:hover{
+    color:white;
+    background-color:black;
+}
+.featured .item:nth-child(1),.featured .item:nth-child(2){
+    max-width:34rem;
+    min-width:12rem;
+    flex-shrink: 1;
+}
+.featured .item:nth-child(4){
 
-    width: 100%;
 }
 footer{
     grid-area: footer;
-
+    background-color: var(--dark);
     width: 100%;
 }
