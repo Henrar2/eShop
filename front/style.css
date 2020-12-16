@@ -5,8 +5,9 @@
     --secondary:#d4d4ce;
     --default:#f6f6f6;
     --dark:#023246;
+    --success: #28a745;
 }
-button,a,.brandlogo,.navbar,li,i,a{
+button,a,.brandlogo,.navbar,li,i,a,.searchtext{
     transition: 400ms;
 }
 button{
@@ -47,7 +48,7 @@ header{
     background-color: transparent;
     width:60%;
     height:100%;
-    background: var(--default);
+    background: white;
 }
 .brandlogo{
     height: inherit;
@@ -78,7 +79,7 @@ header{
     align-items: center; 
     width:40%;
     height:100%;
-    background: var(--default);
+    background: white;
 }
 .navbar ul{
     list-style: none;
@@ -115,12 +116,12 @@ header{
         width:6rem;
     }
     .mainheader{
-        background: var(--default);
         width:100%;
     }
     .navbar li span{
         display: none;
     }
+    
 }
 main{
     grid-area: main;
@@ -128,17 +129,16 @@ main{
 }
 .container{
     display: flex;
-    margin:1vh 5vw;
     flex-direction: column ;
-    background: gray;
-
+    background: silver;
 }
 .featured{
     display: flex;
     background-color: white;
     flex-direction: row;
     flex-wrap: wrap;
-    border:1px solid black;
+
+    justify-content: center;
 
 }
 @media (max-width:900px){
@@ -147,29 +147,68 @@ main{
         min-height:20vh;
     }
 }
-.item{
-    flex-grow: 1;
-    margin: 1vw;
-    height:250px;
-    border:1px solid black;
-    background:linear-gradient(180deg, #F9F9F9 0%, #9BAED7 100%);
-    
-}
-.item button{
-    float:left;
-    height:20%;
-    width:30%;
-}
-.item img{
-    float:right;
-    max-height:50%;
-}
-.item:nth-child(4){
-    margin: 1vw;
-    flex-grow:1;
+.card{
+    width:18rem;
+    margin:1rem 1rem;
+    padding:1rem 1rem;
+    background-color: whitesmoke;
+    border-radius: 21px;
     border:1px solid silver;
+    box-shadow: 1px 2px 5px black;
 }
-  
+.card img{
+    width:18rem;
+    border-bottom: 1px solid silver;
+}
+.btn{
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    font-weight: 800;
+    padding-top: 1rem  ;
+    border-radius: 12px;
+    padding:0.5rem;
+    color:var(--primary);
+    text-decoration: none;
+}
+.btn:hover{
+    box-shadow: 0 0 10px var(--primary);
+}
+.btn:active{
+     box-shadow: inset 0 0 10px var(--primary); 
+}
+.btn-primary{
+    background-color:var(--success);
+    color:white;
+}
+.btn-primary:active{
+    background-color: var(--default);
+    color: black;
+}
+.login-box{
+    background-color: gray;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right:50%;
+    top:50%;
+    margin-right:-25%;
+    margin-top:-25%;
+    width:50%;
+    height:50%;
+
+}
+@media screen and (max-width: 900px){
+    .login{
+        background: green;
+        position: fixed;
+        top:10vh;
+        right:20vw;
+        margin-right:-15%;
+        margin-top:-5vh;
+        width:80vw;
+        height:80vh;
+    }
+}
 footer{
     grid-area: footer;
     background-color: var(--dark);
