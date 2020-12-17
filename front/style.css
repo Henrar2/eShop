@@ -90,19 +90,21 @@ header{
     margin-right:1rem;
     padding-left:1rem;
 }
-.navbar li{
+.navbar li *{
     cursor:pointer;
     text-align: center;
     transition: 10ms;
+    color:black;
+    margin-left: 6px;
 }
-.navbar li:hover{
+.navbar li:hover *{
     color:var(--primary);
     transition: 10ms;
 }
-.navbar li span{
+.navbar li a{
     margin-left:6px;
     transition: 10ms;
-
+    text-decoration: none;
 }
 @media screen and (max-width: 900px){
     .navbar{
@@ -111,6 +113,9 @@ header{
         height: auto;
         width:100%;
         border-top:1px solid black;
+    }
+    .navbar a:visited > i{
+        color:black;
     }
     .searchtext:focus{
         width:6rem;
@@ -140,12 +145,6 @@ main{
 
     justify-content: center;
 
-}
-@media (max-width:900px){
-    .item{
-        min-width: 90vw;
-        min-height:20vh;
-    }
 }
 .card{
     width:18rem;
@@ -184,19 +183,6 @@ main{
     background-color: var(--default);
     color: black;
 }
-.login-box{
-    background-color: gray;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    right:50%;
-    top:50%;
-    margin-right:-25%;
-    margin-top:-25%;
-    width:50%;
-    height:50%;
-
-}
 @media screen and (max-width: 900px){
     .login{
         background: green;
@@ -213,4 +199,72 @@ footer{
     grid-area: footer;
     background-color: var(--dark);
     width: 100%;
+}
+.login-container{
+    grid-area: main;
+    display:flex;
+    height:80vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    background-size: cover;
+    background-image: url(./imgs/login-wallpaper.jpg);
+    background-repeat: no-repeat;
+    
+}
+.login-box{
+    margin:1rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:flex-start;
+    background-color:rgba(169, 169, 169, 0.685);
+    width:25rem;
+    height:35rem;
+}
+.login-box *{
+    margin-top:1rem;
+    margin-left:10%;
+    border-radius: 12px;
+    font-weight: 900;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.login-box h1{
+    margin-left:25%;
+    font-weight: 900;
+    font-family: sans;
+    font-size:5rem;
+    color: black;
+    text-decoration: cornflowerblue underline;
+}
+.login-box label{
+    font-weight: 900;
+    font-size: 21px;
+    /* text-decoration: 1px cornflowerblue underline; */
+
+}
+.login-box input{
+    background-color: rgba(245, 245, 245, 0.712);
+    height: 2rem;
+    width: 80%;
+    border-radius:12px;
+    outline: none;
+    border:1px solid transparent;
+    box-shadow: none;
+}
+.login-box input::placeholder{
+    opacity: 0.5;
+    color:black;
+    text-align: left;
+}
+.login-box input:focus{
+    color:black;
+}
+.login-box input:focus{
+    border:1px solid cornflowerblue;
+    transition: 400ms;
+}
+.login-box .btn-primary{
+    height:2rem;
 }
