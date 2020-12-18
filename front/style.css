@@ -203,7 +203,7 @@ footer{
 .login-container{
     grid-area: main;
     display:flex;
-    height:80vh;
+    height:auto;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -219,7 +219,7 @@ footer{
     flex-direction: column;
     align-items: flex-start;
     justify-content:flex-start;
-    background-color:rgba(169, 169, 169, 0.685);
+    background-color:rgba(169, 169, 169, 0.8);
     width:25rem;
     height:35rem;
 }
@@ -267,4 +267,13 @@ footer{
 }
 .login-box .btn-primary{
     height:2rem;
+    width:150%;
+}
+.login-box .info{
+    font-size: smaller;
+    visibility: hidden;
+}
+.login-box #login:disabled{
+    background-color: var(--default);
+    color: var(--primary);
 }

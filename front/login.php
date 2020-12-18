@@ -16,6 +16,7 @@
             <link rel="stylesheet" href="style.css">
             
             <!-- Scripts -->
+            <script src="./loginform.js"></script>
     
     </head>
     <header>
@@ -44,11 +45,13 @@
                 <div class="login-box">
                     <h1>Login</h1>
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Username"></input>
+                    <input type="text" id="username" name="username" placeholder="Username" required  onfocusout="validateuser();"></input>
+                    <p id="userinfo" class="info" style="visibility:hidden;">a</p>
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="username" placeholder="Password"></input>
-                    <button class="btn-primary" type="submit" style="width:25%;" onclick="login()">Login</button>
-                </div>
+                    <input type="password" id="password" name="password" placeholder="Password" required  onfocusout="validatepass();"></input>
+                    <p id="passwordinfo" class="info" style="color:red;visibility:hidden;">a<p>
+                    <button id="login" class="btn-primary" type="submit" >Login</button>
+                    </div>
             </div>
         </body>
     </main>
