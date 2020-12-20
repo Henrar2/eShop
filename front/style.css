@@ -142,7 +142,6 @@ main{
     background-color: white;
     flex-direction: row;
     flex-wrap: wrap;
-
     justify-content: center;
 
 }
@@ -267,11 +266,11 @@ footer{
 }
 .login-box .btn-primary{
     height:2rem;
-    width:150%;
+    
 }
 .login-box .info{
     font-size: smaller;
-    visibility: hidden;
+    color: rgb(173, 41, 41);
 }
 .login-box #login:disabled{
     background-color: var(--default);
