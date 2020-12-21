@@ -21,25 +21,26 @@ if(isset($_POST['signup'])){
     }elseif(!filter_var($mail,FILTER_VALIDATE_EMAIL)){
         header("Location: ../signup.php?error=invalidmail&username=".$username);
         exit();
-    }elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{6,12}*$/', $password)){
+    }elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{6,12}$/', $password)){
         header("Location:../signup.php?error=passwordcrit&username=".$username."&mail=".$mail);
         exit();
     }elseif(!$password === $rpassword){
         header("Location:../signup.php?error=passwordmatch&username=".$username."&mail=".$mail);
         exit();
     }else{
-        $sql = "SELECT username FROM user WHERE username=?";
+        // TODO Seperate username check from mail check
+        $sql = "SELECT username,mail FROM user WHERE username=? OR mail=?";
         $stmt = mysqli_stmt_init($con);
         if(!mysqli_stmt_prepare($stmt,$sql)){
             header("Location:../signup.php?error=sqlerror");
             exit();
         }else{
-            mysqli_stmt_bind_param($stmt,"s",$username);
+            mysqli_stmt_bind_param($stmt,"ss",$username,$mail);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $result = mysqli_stmt_num_rows($stmt);
             if($result>0){
-                header("Location:../signup.php?error=usertaken&mail=".$mail);
+                header("Location:../signup.php?error=usertaken");
                 exit();
             }else{
                 $sql = "INSERT INTO user (username,passcode,mail) VALUES (?,?,?)";
