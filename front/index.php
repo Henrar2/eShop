@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
     <head>
       <title>Welcome to eShop</title>
@@ -20,24 +23,7 @@
     <body>
         <header>
             <!-- Header -->
-            <div class="mainheader">
-                <a href="/"><img src="./imgs/eshop-logo.png" alt="eCommerce" class="brandlogo"></a>
-                 
-                <div class="search">
-                    <div class="searchfield">
-                        <span><i class="fas fa-search"></i></span><input class="searchtext" type="text" placeholder="Search...">
-                    </div>
-                </div>  
-            </div>
-            <nav class="navbar">
-                <ul class="list">
-                    <li><a href="items.html"><i class="fas fa-bars"></i><span>Items</span></a></li>
-                    <li><a href="login.php"><i class="fas fa-shopping-cart"></i><span>Login</span></a></li>
-                    <li><a href="cart.html"><i class="fas fa-user"></i><span>Cart</span></a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-                    </li>
-                </ul>
-            </nav>
+           <?php include ("./components/header.php"); ?>
         </header>
         <main>
             <div class="container">
@@ -92,8 +78,6 @@
                       </div>
                 </div>
         </main>
-        <footer id="footer">
-            <img src="" alt="">
-        </footer>
+       <?php include ("./components/footer.php"); ?>
     </body>
 </html>
