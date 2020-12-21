@@ -41,8 +41,8 @@ if(isset($_SESSION['userid'])){
                     <input type="text" id="password" name="password" placeholder="Password"></input>
                     <label for="rpasword">Repeat Password:</label>
                     <input type="text" id="rpassword" name="rpassword" placeholder="Repeat Password"></input>
-                    <button id="signup" class="btn-primary" type="submit">Sign Up</button>
-                    <a href="signin.php">Login</a>
+                    <button id="signup" class="btn-primary" type="submit" name="signup">Sign Up</button>
+                    <a href="signin.php">I already have an account</a>
                     <a href="reset.php" style="visibility:hidden;">Forgot Password?</a>
                 </form>
             </div>
