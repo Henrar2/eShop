@@ -38,7 +38,6 @@ header{
     display: flex;
     grid-area: head;
     width: 100%;
-    align-items: center;
     box-shadow: 3px 0px 3px 1px black;
 }
 .mainheader{
@@ -96,6 +95,7 @@ header{
     transition: 10ms;
     color:black;
     margin-left: 6px;
+    font-weight: bold;
 }
 .navbar li:hover *{
     color:var(--primary);
@@ -118,7 +118,7 @@ header{
         color:black;
     }
     .searchtext:focus{
-        width:6rem;
+        width:5rem;
     }
     .mainheader{
         width:100%;
@@ -220,17 +220,20 @@ footer{
     justify-content:flex-start;
     background-color:rgba(169, 169, 169, 0.8);
     width:25rem;
-    height:35rem;
+    height:auto;
 }
 .login-box *{
     margin-top:1rem;
     margin-left:10%;
     border-radius: 12px;
-    font-weight: 900;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-family: sans-serif;
+    align-self: center;
+    margin-left:0;
 }
 .login-box h1{
-    margin-left:25%;
+    align-self:center;
+    margin-left:0;
     font-weight: 900;
     font-family: sans;
     font-size:5rem;
@@ -238,8 +241,12 @@ footer{
     text-decoration: cornflowerblue underline;
 }
 .login-box label{
-    font-weight: 900;
+    align-self:flex-start ;
+    margin-left:10%;
+    font-family: sans-serif;
+    font-weight: bold;
     font-size: 21px;
+    
     /* text-decoration: 1px cornflowerblue underline; */
 
 }
@@ -266,6 +273,11 @@ footer{
 }
 .login-box .btn-primary{
     height:2rem;
+    width:6rem;
+    align-self: flex-start;
+    margin-left:10%;
+    font-family: sans;
+    font-weight: 700;
     
 }
 .login-box .info{
@@ -275,4 +287,14 @@ footer{
 .login-box #login:disabled{
     background-color: var(--default);
     color: var(--primary);
+}
+.login-box a{
+    color:var(--dark);
+    text-decoration: none;
+    align-self: flex-end;
+    margin-right:10%;
+}
+.login-box a:hover{
+    color: var(--primary);
+    text-decoration: underline;
 }
