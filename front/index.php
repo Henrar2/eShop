@@ -28,54 +28,7 @@ session_start();
         <main>
             <div class="container">
                 <div class="featured">
-                    <div class="card">
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">PlayStation 5 DualShock Controller</h5>
-                          <p class="card-text">With addaptive triggers for immersive experience.</p>
-                          <a href="#footer" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
-                      <div class="card" >
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">PlayStation 5 DualShock Controller</h5>
-                          <p class="card-text">With addaptive triggers for immersive experience.</p>
-                          <a href="#footer" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
-                      <div class="card" >
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">PlayStation 5 DualShock Controller</h5>
-                          <p class="card-text">With addaptive triggers for immersive experience.</p>
-                          <a href="#footer" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
-                      <div class="card" >
-                        <img class="card-img-top" src="./imgs/ps5con.png" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Buy Now!</a>
-                        </div>
-                      </div>
+                <?php include ("./include/items.php"); ?>
                 </div>
         </main>
        <?php include ("./components/footer.php"); ?>
