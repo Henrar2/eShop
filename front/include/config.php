@@ -7,6 +7,6 @@ $con =  mysqli_connect($host,$name,$pass,$dbname);
 if(!$con){
     die(header('Location: ./index.php')); //TODO Change IP to an error page 
 }else{
-    header('Location: ../index.php?error=authorizedNO');
+    echo $con->connect_error;   
 }
 ?>
