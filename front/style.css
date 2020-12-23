@@ -1,7 +1,7 @@
 *{
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
-    --primary:#287094;
+    --primary:#4353FF;
     --secondary:#d4d4ce;
     --default:#f6f6f6;
     --dark:#023246;
@@ -98,7 +98,7 @@ header{
     font-weight: bold;
 }
 .navbar li:hover *{
-    color:var(--primary);
+    color:cornflowerblue;
     transition: 10ms;
 }
 .navbar li a{
@@ -148,39 +148,74 @@ main{
 .card{
     width:18rem;
     margin:1rem 1rem;
-    padding:1rem 1rem;
-    background-color: whitesmoke;
+    padding:0.5em 1rem;
+    background-color: white;
     border-radius: 21px;
     border:1px solid silver;
     box-shadow: 1px 2px 5px black;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
 }
 .card img{
     width:18rem;
     border-bottom: 1px solid silver;
 }
-.btn{
+.card-title{
+    font-size: 1.1em;
+    font-weight: 900;
+}
+.card-text{
+    font-size: 0.90em;
+    font-weight:600;
+}
+.card a{
+    margin:0 0 1rem 0;
+    width:10em;
+    
+}
+/* .btn{
     font-size: 1.1rem;
-    font-family: sans-serif;
-    font-weight: 800;
-    padding-top: 1rem  ;
     border-radius: 12px;
     padding:0.5rem;
     color:var(--primary);
     text-decoration: none;
-}
-.btn:hover{
-    box-shadow: 0 0 10px var(--primary);
+} */
+/* .btn:hover{
+    box-shadow: 0 0 10px black;
 }
 .btn:active{
-     box-shadow: inset 0 0 10px var(--primary); 
+     box-shadow: inset 0 0 10px black; 
 }
 .btn-primary{
-    background-color:var(--success);
-    color:white;
+    background-color:white;
+    border:1px solid black;
+    color:black;
 }
 .btn-primary:active{
-    background-color: var(--default);
+    background-color: black;
+    color: white;
+} */
+.btn{
+    font-family: "Roboto", Roboto;
+    font-size: 0.85em;
+    font-weight: bold;
     color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+.btn:hover{
+    color:white;
+    background-color: black;
+}
+.btn:active{
+    color:white;
+    background-color:var(--success);
+    border-color: green;
 }
 @media screen and (max-width: 900px){
     .login{
@@ -258,11 +293,22 @@ footer{
     outline: none;
     border:1px solid transparent;
     box-shadow: none;
+    z-index: 0;
 }
 .login-box input::placeholder{
     opacity: 0.5;
     color:black;
     text-align: left;
+    padding:20px;
+    transition: 400ms;
+}
+.login-box input:focus::placeholder{
+    opacity: 0.5;
+    color:black;
+    text-align: left;
+    padding:20px;
+    transform: translate(-15%,-15%) scale(0.7) ;
+    font-size: large;
 }
 .login-box input:focus{
     color:black;
@@ -276,7 +322,6 @@ footer{
     width:6rem;
     align-self: flex-start;
     margin-left:10%;
-    font-family: sans;
     font-weight: 700;
     
 }
@@ -284,10 +329,12 @@ footer{
     font-size: smaller;
     color: rgb(173, 41, 41);
 }
-.login-box #login:disabled{
+/* Not in use */
+.login-box #login:disabled{ 
     background-color: var(--default);
     color: var(--primary);
 }
+/* End */
 .login-box a{
     color:var(--dark);
     text-decoration: none;
