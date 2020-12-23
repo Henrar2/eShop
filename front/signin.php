@@ -32,11 +32,11 @@ if(isset($_SESSION['userid'])){
             <div class="login-container" >
                 <form class="login-box" method="POST" action="./include/signin.inc.php">
                     <h1>Login</h1>
-                    <p id="message" style="color:rgb(173, 41, 41)";><?php if(isset($errors)) echo $errors;?></p>
+                    <p id="message" class="info" style="color:rgb(173, 41, 41)";><?php if(isset($errors)) echo $errors;?></p>
                     <label for="username">Username or E-mail:</label>
                     <input type="text" id="username" name="username" placeholder="Username or E-mail"></input>
                     <label for="password">Password:</label>
-                    <input type="text" id="password" name="password" placeholder="Password"></input>
+                    <input type="password" id="password" name="password" placeholder="Password"></input>
                     <button id="login" class="btn-primary" type="submit" name="login">Login</button>
                     <a href="signup.php" id="signup" name="signup">Sign Up</a>
                     <a href="reset.php" id="reset" name="reset"style="padding-bottom: 2rem;">Forgot Password?</a>

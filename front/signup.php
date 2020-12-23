@@ -38,7 +38,7 @@ if(isset($_SESSION['userid'])){
                     <label for="username">E-mail:</label>
                     <input type="mail" id="mail" name="mail" placeholder="E-mail"></input>
                     <label for="password">Password:</label>
-                    <input type="text" id="password" name="password" placeholder="Password"></input>
+                    <input type="password" id="password" name="password" placeholder="Password"></input>
                     <label for="rpasword">Repeat Password:</label>
                     <input type="text" id="rpassword" name="rpassword" placeholder="Repeat Password"></input>
                     <button id="signup" class="btn-primary" type="submit" name="signup">Sign Up</button>
