@@ -38,6 +38,8 @@ if(isset($_POST['login'])){
             }
         }
     }
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
 }else{
     header("Location: ../signin.php");
     exit();

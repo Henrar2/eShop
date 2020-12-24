@@ -21,5 +21,9 @@
                     </div>
                 </div>
             <?php endwhile?>
-<?php }}
+            <?php 
+        }
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
 ?>
