@@ -21,15 +21,13 @@ session_start();
 
     </head>
     <body>
-        <header>
-            <!-- Header -->
-           <?php include ("./components/header.php"); ?>
-        </header>
+        <!-- Header -->
+        <?php include ("./components/header.php"); ?>
         <main>
             <div class="container">
                 <div class="featured">
                 <?php include ("./include/items.php"); ?>
-                </div>
+            </div>
         </main>
        <?php include ("./components/footer.php"); ?>
     </body>
