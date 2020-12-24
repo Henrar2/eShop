@@ -1,15 +1,19 @@
 *{
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
-    --primary:#4353FF;
-    --secondary:#d4d4ce;
+    /* --primary:#4353FF; */
+
     --default:#f6f6f6;
     --dark:#023246;
-    --success: #28a745;
+    --primary:#0275d8;
+    --success:#5cb85c;
+    --info:#5bc0de;
+    --warning:#f0ad4e;
+    --danger:#d9534f;
+    --inverse:#292b2c;
+    --faded:#f7f7f7;
 }
-button,a,.brandlogo,.navbar,li,i,a,.searchtext{
-    transition: 400ms;
-}
+
 button{
     font-family: sans;
     outline: none;
@@ -34,103 +38,182 @@ body{
     "main main main"
     "footer footer footer";
 }
+*{
+    margin:0;
+    padding:0;
+    --primary:#0275d8;
+    --success:#5cb85c;
+    --info:#5bc0de;
+    --warning:#f0ad4e;
+    --danger:#d9534f;
+    --inverse:#292b2c;
+    --faded:#f7f7f7;
+
+}
+::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius:21px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: gray;
+    border-radius: 21px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #A7C5EB;
+    border-radius:21px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #949cdf; 
+  }
+
+body{
+    display: block;
+    width:auto;
+}
+/* HEADER START */
 header{
-    display: flex;
     grid-area: head;
+    display: flex;
     width: 100%;
+    height: 60px;
+    min-height: 5%;
+    flex-direction: row;
+    align-items: center;
     box-shadow: 3px 0px 3px 1px black;
+    background: var(--faded);
+}
+header a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+header a img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 .mainheader{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     background-color: transparent;
-    width:60%;
-    height:100%;
-    background: white;
+    width: 60%;
+    height: 100%;
+    background: transparent;
 }
-.brandlogo{
-    height: inherit;
-    cursor: pointer;
+.mainheader span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--inverse);
+    padding: 0.5rem;
+    border-radius: 21px;
 }
-.searchfield{
-    border-radius:25px;
-    background: white;
-    margin-right:1rem;
-    border:1px solid black;
-    box-shadow: 1px 1px 5px whitesmoke;
+.mainheader span i{
+    color:var(--inverse);
 }
-.searchfield input{
-    border-radius: 25px;
-    border:1px solid transparent;
+.mainheader span input{
+    border: 0;
     outline: none;
     width:5rem;
+    background:transparent;
+    transition: 400ms;
+}::placeholder{
+    background:transparent;
+    color:var(--inverse);
 }
-.searchfield span{
-    margin:0.5rem 1rem 0.5rem 0.5rem;
-}
-.searchtext:focus{
-    width:8rem;
+.mainheader span input:focus{
+    width:7rem;
+    
 }
 .navbar{
-    display: block;
-    justify-content: center;
-    align-items: center; 
-    width:40%;
-    height:100%;
-    background: white;
-}
-.navbar ul{
-    list-style: none;
-    display:flex;
-    flex-wrap: nowrap;
-    justify-content:space-around;
+    display: flex;
+    /* justify-content: space-around; */
     align-items: center;
-    margin-right:1rem;
-    padding-left:1rem;
-}
-.navbar li *{
-    cursor:pointer;
-    text-align: center;
-    transition: 10ms;
-    color:black;
-    margin-left: 6px;
-    font-weight: bold;
-}
-.navbar li:hover *{
-    color:cornflowerblue;
-    transition: 10ms;
-}
-.navbar li a{
-    margin-left:6px;
-    transition: 10ms;
-    text-decoration: none;
+    flex-direction: row;
+    /* text-align: left; */
+    width: 40%;
+    height: 100%;
+    background: transparent;
 }
 @media screen and (max-width: 900px){
     .navbar{
         position:fixed;
         bottom: 0;
-        height: auto;
+        height: 35px;
+        min-height: 35px;
         width:100%;
         border-top:1px solid black;
+        display: flex;
+        /* justify-content: space-around; */
+        flex-direction: row;
+        /* text-align: left; */
+        background-color: white;
     }
+    .navbar ul li a span{
+        color: var(--fade);
+        display: none;
+    }
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    text-decoration: none;
+    color:var(--inverse);
+    font-size:1.2rem;
+
+}
+.navbar ul li a *{
+    transition: 400ms;
+}
+.navbar ul li a:hover > *{
+    color: cornflowerblue;
+}
+
+.navbar ul li a i{
+    margin: 0 0.2rem 0 0;
+    color:var(--inverse)
+}
+@media screen and (max-width: 900px){
     .navbar a:visited > i{
-        color:black;
-    }
-    .searchtext:focus{
-        width:5rem;
+        color:var(--inverse);
     }
     .mainheader{
         width:100%;
     }
     .navbar li span{
         display: none;
-    }
-    
+    }   
 }
+/* HEADER END */
 main{
     grid-area: main;
-    margin:4rem 0;
+    margin:1% 0;
+    padding:0;
 }
 .container{
     display: flex;
@@ -326,8 +409,13 @@ footer{
     
 }
 .login-box .info{
-    font-size: smaller;
-    color: rgb(173, 41, 41);
+    font-size: normal;
+    background:var(--warning);
+    color: var(--danger);
+    text-align:center;
+    width:100%;
+    padding:10px 0 10px 0;
+    border-radius: 0;
 }
 /* Not in use */
 .login-box #login:disabled{ 
@@ -344,4 +432,30 @@ footer{
 .login-box a:hover{
     color: var(--primary);
     text-decoration: underline;
+}
+
+/* DashBoard */
+.dash-nav{
+   
+    display: flex;
+   
+    float: left;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+    padding: 1rem 1rem 0 1rem;
+    background-color: rosybrown;
+    width: 20%;
+}
+.mainbody{
+    display: flex;
+    background: black;
+    width: 80%;
+    float: left;
+    margin: 1rem 1rem 1rem 1rem;
+    box-shadow: 0 0 5px 1px black;
+    height: 80vh;
+    overflow-y: scroll;
+
 }
