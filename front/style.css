@@ -434,20 +434,49 @@ footer{
     text-decoration: underline;
 }
 
+/* --------- */
 /* DashBoard */
-.dash-nav{
-   
+/* --------- */
+.dashbar{
     display: flex;
-   
+    width:2.5%;
     float: left;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
     list-style: none;
     padding: 1rem 1rem 0 1rem;
-    background-color: rosybrown;
-    width: 20%;
+    background-color: var(--faded);
+    color:var(--inverse)
 }
+.closebtn:hover{
+    position: relative;
+    cursor:pointer;
+}
+.dashnav{
+    display: flex;
+    width:2.5%;
+    float: left;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 1rem 1rem 0 1rem;
+    background-color: var(--faded);
+    color:var(--inverse);
+}
+.dashnav li{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+.dashnav li span{
+    margin-left:13px;
+    display: none;
+}
+
 .mainbody{
     display: flex;
     background: black;
