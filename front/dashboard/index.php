@@ -21,7 +21,23 @@ session_start();
             <link rel="stylesheet" href="../style.css">
             
             <!-- Scripts -->
-    
+            <script>
+            function navHandle(){
+                if(document.getElementById("dashbar").style.width=="10%"){
+                    document.getElementById("dashbar").style.transition="400ms";
+                    document.getElementById("dashbar").style.width="2.5%";
+                    document.getElementById("text1").style.display="none";
+                    document.getElementById("text2").style.display="none";
+                    document.getElementById("text3").style.display="none";
+                }else{
+                    document.getElementById("dashbar").style.transition="400ms";
+                    document.getElementById("dashbar").style.width="10%";
+                    document.getElementById("text1").style.display="inline";
+                    document.getElementById("text2").style.display="inline";
+                    document.getElementById("text3").style.display="inline";
+                }
+            }
+            </script>
         </head>
         <body>
 
@@ -29,60 +45,20 @@ session_start();
         <?php include ("../components/header.php"); ?>
 
             
-    <main style="/* background-color:red; */margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
-     <nav class="dash-nav" style="/* height:100%; */display: flex;/* position: absolute; */float:left;flex-direction: column;gap: 2rem;align-items: center;list-style:none;padding:1rem 1rem 0 1rem;background-color: rosybrown;width: 20%;">
-            <div>
-                <h1>Hello <?php echo $_SESSION['username']; ?></h1>
-                <a href="../include/signout.inc.php">Logout!</a> 
-            </div>
-                <ul class="list" style=""> 
-                    <ul class="listitem" style=""><a href="#">News</a>
-                        <li style="padding: 8px 1px;">asd</li>
-                        <li style="padding: 8px 1px;">asd</li>
-                        <li style="padding: 8px 1px;">asd</li>
-                        <li style="padding: 8px 1px;">asd</li>
-                    </ul>
-                    <li class="listitem" style="padding: 8px 1px;"><a href="#">Sales</a></li>
-                    <li class="listitem" style="padding: 8px 1px;"><a href="#">Items</a></li>  
-                </ul>
-            </nav>
-    <div class="mainbody" bis_skin_checked="1" style="
-    display: flex;
-    background: black;
-    width: 80%;
-    float: left;
-    margin: 1rem 1rem 1rem 1rem;
-    box-shadow: 0 0 5px 1px black;
-    height: 80vh;
-    -webkit-scrollbar {;
-}
-
-/* Track */
-::
-    -webkit-scrollbar-track {;
-
-}
- 
-/* Handle */
-::
-    -webkit-scrollbar-thumb {;
-
-
-}
-
-/* Handle on hover */
-::
-    -webkit-scrollbar-thumb:hover {
-  background: #3676e8; 
-};
-">
-<div class="maincontent" bis_skin_checked="1" style="
-    height: 500vh;
-    background: green;
-">
-<ul>
-    <li>asdasdasdasd</li>
-    <li>asdasdasdasd</li>
+    <main style=" /*background-color:red;*/;margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
+        <nav class="dashbar" id="dashbar" style=position:relative;>
+            <label href="javascript:void(0);" class="closebtn" onclick="navHandle()"><i class="fa fa-bars"></i></label>
+            <ul class="dashnav">
+                <li><i class="fas fa-chart-line"></i><span id="text1" class="text">Statistics</span></li>
+                <li><i class="fas fa-truck"></i></i><span id="text2" class="text">Orders</span></li>
+                <li><i class="fas fa-users"></i><span id="text3" class="text">Users</span></li>
+            </ul>
+        </nav>
+    <div class="mainbody" bis_skin_checked="1">
+<div class="maincontent" bis_skin_checked="1" style="height: 500vh;background: green;">
+    <ul>
+        <li>asdasdasdasd</li>
+        <li>asdasdasdasd</li>
     </ul>
 </div></div>
 
@@ -91,4 +67,3 @@ session_start();
         </body>
     </html>
     <?php endif?>
-    
