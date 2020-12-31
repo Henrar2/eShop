@@ -2,11 +2,12 @@
 session_start();
     if(!isset($_SESSION['userid'])){
         header("Location: ../signin.php");
-    }
-    if(isset($_SESSION['userid'])):?>
+    }elseif(isset($_SESSION['accesslevel']) && $_SESSION['accesslevel']!=1){
+        header("Location:./users.php");
+    }elseif($_SESSION['accesslevel']==1){?>
         <!DOCTYPE html>
         <head>
-          <title>Welcome to your Dashboard - <?php echo $_SESSION['username'];?></title>
+          <title>Welcome to your Dashboard - <?php echo $_SESSION['username']?></title>
             <!-- Responsive width -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -29,12 +30,14 @@ session_start();
                     document.getElementById("text1").style.display="none";
                     document.getElementById("text2").style.display="none";
                     document.getElementById("text3").style.display="none";
+                    document.getElementById("text4").style.display="none";
                 }else{
                     document.getElementById("dashbar").style.transition="400ms";
                     document.getElementById("dashbar").style.width="10%";
                     document.getElementById("text1").style.display="inline";
                     document.getElementById("text2").style.display="inline";
                     document.getElementById("text3").style.display="inline";
+                    document.getElementById("text4").style.display="inline";
                 }
             }
             </script>
@@ -49,21 +52,50 @@ session_start();
         <nav class="dashbar" id="dashbar" style=position:relative;>
             <label href="javascript:void(0);" class="closebtn" onclick="navHandle()"><i class="fa fa-bars"></i></label>
             <ul class="dashnav">
-                <li><i class="fas fa-chart-line"></i><span id="text1" class="text">Statistics</span></li>
-                <li><i class="fas fa-truck"></i></i><span id="text2" class="text">Orders</span></li>
-                <li><i class="fas fa-users"></i><span id="text3" class="text">Users</span></li>
+                <a href=""><i class="fas fa-chart-line"></i><span id="text1" class="text">Statistics</span></a>
+                <a href=""><i class="fas fa-truck"></i></i><span id="text2" class="text">Orders</span></a>
+                <a href=""><i class="fas fa-users"></i><span id="text3" class="text">Users</span></a>
+                <a href="../include/signout.inc.php"><i class="fas fa-sign-out-alt"></i><span id="text4" class="text">Logout</span></a>
             </ul>
         </nav>
     <div class="mainbody" bis_skin_checked="1">
-<div class="maincontent" bis_skin_checked="1" style="height: 500vh;background: green;">
-    <ul>
-        <li>asdasdasdasd</li>
-        <li>asdasdasdasd</li>
-    </ul>
-</div></div>
+        <div class="maincontent" bis_skin_checked="1">
+            <h1 style="margin:2rem 1rem 1rem 2rem">Hello <?php echo $_SESSION['username']; ?>!<br><br>Welcome to your Dashboard</h1>
+            <div class="row" style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-around;gap:1rem;">
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+                <div class="card">This is a content</div>
+            </div>
+        </div></div>
 
             </main>
            <?php include ("../components/footer.php"); ?>
         </body>
     </html>
-    <?php endif?>
+    <?php }else{
+
+    }
+    ?>
