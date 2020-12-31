@@ -30,6 +30,8 @@ if(isset($_POST['login'])){
                     session_start();
                     $_SESSION['userid'] = $row['id'];
                     $_SESSION['username'] = $row['username'];
+                    $_SESSION['usermail'] = $row['mail'];
+                    $_SESSION['accesslevel'] = $row['access_level'];
                     header("Location:../dashboard/");
                 }
             }else{
