@@ -1,5 +1,5 @@
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family:sans-serif;
     font-size: 1.05rem;
     /* --primary:#4353FF; */
 
@@ -12,6 +12,7 @@
     --danger:#d9534f;
     --inverse:#292b2c;
     --faded:#f7f7f7;
+    --light:#eef2f7;
 }
 
 button{
@@ -131,6 +132,7 @@ header a img{
     transition: 400ms;
 }::placeholder{
     background:transparent;
+    opacity: 0.4;
     color:var(--inverse);
 }
 .mainheader span input:focus{
@@ -463,28 +465,56 @@ footer{
     align-items: center;
     list-style: none;
     padding: 1rem 1rem 0 1rem;
-    background-color: var(--faded);
+    background-color: var(--light);
     color:var(--inverse);
 }
-.dashnav li{
+.dashnav a{
     display: flex;
     flex-direction:row;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color:black;
 }
-.dashnav li span{
+.dashnav a:hover{
+    cursor:pointer;
+    color:var(--info);
+}
+.dashnav a span{
     margin-left:13px;
     display: none;
 }
 
 .mainbody{
     display: flex;
-    background: black;
-    width: 80%;
+    width: 100%;
+    background: #eef2f7;
     float: left;
     margin: 1rem 1rem 1rem 1rem;
     box-shadow: 0 0 5px 1px black;
     height: 80vh;
     overflow-y: scroll;
 
+}
+.maincontent{
+    background:transparent;
+}
+.maincontent h1{
+    font-weight: 700;
+}
+#table{
+    width:auto;
+
+}
+#table td{
+
+    padding:1rem;
+
+}
+#table tr{
+    border-top:1px solid black;
+}
+#table tr th{
+    
+    background:blueviolet;
 }
