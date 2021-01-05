@@ -1,5 +1,5 @@
 *{
-    font-family:sans-serif;
+    font-family:"Nunito",sans-serif;
     font-size: 1.05rem;
     /* --primary:#4353FF; */
 
@@ -13,6 +13,7 @@
     --inverse:#292b2c;
     --faded:#f7f7f7;
     --light:#eef2f7;
+    --gray: rgb(177, 177, 177);
 }
 
 button{
@@ -148,12 +149,13 @@ header a img{
     width: 40%;
     height: 100%;
     background: transparent;
+    z-index: 1;
 }
 @media screen and (max-width: 900px){
     .navbar{
         position:fixed;
         bottom: 0;
-        height: 35px;
+        height: 50px;
         min-height: 35px;
         width:100%;
         border-top:1px solid black;
@@ -260,14 +262,14 @@ main{
     width:10em;
     
 }
-/* .btn{
+.btn{
     font-size: 1.1rem;
     border-radius: 12px;
     padding:0.5rem;
     color:var(--primary);
     text-decoration: none;
-} */
-/* .btn:hover{
+} 
+.btn:hover{
     box-shadow: 0 0 10px black;
 }
 .btn:active{
@@ -281,7 +283,7 @@ main{
 .btn-primary:active{
     background-color: black;
     color: white;
-} */
+}
 .btn{
     font-family: "Roboto", Roboto;
     font-size: 0.85em;
@@ -302,9 +304,11 @@ main{
     background-color:var(--success);
     border-color: green;
 }
+.btn-info{
+    
+}
 @media screen and (max-width: 900px){
     .login{
-        background: green;
         position: fixed;
         top:10vh;
         right:20vw;
@@ -312,6 +316,9 @@ main{
         margin-top:-5vh;
         width:80vw;
         height:80vh;
+    }
+    .card{
+        width:100%;
     }
 }
 footer{
@@ -339,8 +346,13 @@ footer{
     align-items: flex-start;
     justify-content:flex-start;
     background-color:rgba(169, 169, 169, 0.8);
-    width:25rem;
+    width:30%;
     height:auto;
+}
+@media screen and (max-width: 900px){
+    .login-box{
+        width:90%;
+    }
 }
 .login-box *{
     margin-top:1rem;
@@ -378,7 +390,7 @@ footer{
     outline: none;
     border:1px solid transparent;
     box-shadow: none;
-    z-index: 0;
+    padding-left: 0.5rem;
 }
 .login-box input::placeholder{
     opacity: 0.5;
@@ -449,7 +461,7 @@ footer{
     list-style: none;
     padding: 1rem 1rem 0 1rem;
     background-color: var(--faded);
-    color:var(--inverse)
+    color:var(--inverse);
 }
 .closebtn:hover{
     position: relative;
@@ -465,56 +477,147 @@ footer{
     align-items: center;
     list-style: none;
     padding: 1rem 1rem 0 1rem;
-    background-color: var(--light);
+    margin:0 0 0 0.5rem;
     color:var(--inverse);
+    z-index: 0;
 }
 .dashnav a{
+    position: relative;
     display: flex;
     flex-direction:row;
-    justify-content: center;
-    align-items: center;
+    justify-content:left;
+    align-items:center;
+    padding:1rem;
     text-decoration: none;
     color:black;
+    transition: 400ms;
 }
 .dashnav a:hover{
     cursor:pointer;
-    color:var(--info);
+    color:cornflowerblue;
 }
 .dashnav a span{
     margin-left:13px;
     display: none;
 }
-
 .mainbody{
     display: flex;
-    width: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
     background: #eef2f7;
-    float: left;
     margin: 1rem 1rem 1rem 1rem;
-    box-shadow: 0 0 5px 1px black;
-    height: 80vh;
-    overflow-y: scroll;
+    box-shadow: 0 0 5px 1px black;  
+    width:100%;
+    background-size:cover;
+    background-image: url(./imgs/login-wallpaper.jpg);
+    background-repeat: no-repeat;
+}
+.row{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:1rem;
+}
+.mainbody h1{
+    color:var(--faded);
+    margin-top:2rem;
+    font-size: 21px;
+}
+.items-form{
+    background:rgba(169, 169, 169, 0.8);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.items-form *{
+    margin:auto;
+}
+.items-form span label{
+    margin-bottom: 1rem;
+}
+.items-form span [type=text],.items-form span [type=number]{
+    padding-left:1rem;
+}
+.items-form span input, .items-form span button{
+    outline: none;
+    border-radius: 12px;
+    font-size: 16px;
+    width:10rem;
+    height:2rem;
+    overflow:hidden;
+}
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.maincontent{
-    background:transparent;
-}
-.maincontent h1{
-    font-weight: 700;
-}
-#table{
-    width:auto;
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
-#table td{
-
+.items-form span input::placeholder{
+    font-size: 1rem;
+    outline: none;
+    border-radius: 2px;
+    overflow: hidden; 
+}
+@media screen and (max-width: 900px){
+    .items-form span{
+        width:100%;
+    }
+}
+.col{
+    display:flex;
+    flex-direction:column;
+    align-self: center;
+    justify-content: center;
+}
+.item{
     padding:1rem;
-
+    background-color:var(--inverse);
+    border-radius: 21px;
+    color: var(--light);
+    box-shadow: 0px 0px 3px 1px black;
+    width:12rem;
+    text-align: center;
 }
-#table tr{
-    border-top:1px solid black;
+.utable{
+    margin:auto;
+    border-collapse: collapse;
+    width: 50%;
 }
-#table tr th{
-    
-    background:blueviolet;
+.utable td, .utable th{
+    border: 1px solid black ;
+    padding: 8px;
+    min-width: 6rem;
+}
+.utable tr{
+    background-color:white;
+    color:rgb(51,51,51);
+}
+.utable tr:nth-child(even){
+    background-color: #f2f2f2;  
+    color:var(--inverse);
+}
+.utable tr:hover{
+    background-color: #ddd;
+}
+.utable tr:nth-child(odd):hover{
+    background-color:#ddd;
+    color:var(--inverse);
+}
+.utable th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--info);
+    color: rgb(240, 240, 240);
 }
