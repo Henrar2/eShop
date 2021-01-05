@@ -25,23 +25,7 @@ session_start();
             <link rel="stylesheet" href="../style.css">
             
             <!-- Scripts -->
-            <script>
-            function navHandle(){
-                if(document.getElementById("dashbar").style.width=="10%"){
-                    document.getElementById("dashbar").style.transition="400ms";
-                    document.getElementById("dashbar").style.width="2.5%";
-                    document.getElementById("text1").style.display="none";
-                    document.getElementById("text2").style.display="none";
-                    document.getElementById("text3").style.display="none";
-                }else{
-                    document.getElementById("dashbar").style.transition="400ms";
-                    document.getElementById("dashbar").style.width="10%";
-                    document.getElementById("text1").style.display="inline";
-                    document.getElementById("text2").style.display="inline";
-                    document.getElementById("text3").style.display="inline";
-                }
-            }
-            </script>
+            <script src="./js/navHandle.js"></script>
         </head>
         <body>
 
@@ -50,23 +34,13 @@ session_start();
 
             
     <main style=" /*background-color:red;*/;margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
-        <nav class="dashbar" id="dashbar" style=position:relative;>
-            <label href="javascript:void(0);" class="closebtn" onclick="navHandle()"><i class="fa fa-bars"></i></label>
-            <ul class="dashnav">
-                <li><i class="fas fa-chart-line"></i><span id="text1" class="text">Statistics</span></li>
-                <li><i class="fas fa-truck"></i></i><span id="text2" class="text">Orders</span></li>
-                <li><i class="fas fa-users"></i><span id="text3" class="text">Users</span></li>
-                <a href="../include/signout.inc.php">Logout</a>
-            </ul>
-        </nav>
+        <?php include("../components/dashnav.php"); ?>
     <div class="mainbody" bis_skin_checked="1">
         <div class="maincontent" bis_skin_checked="1">
-            <ul>
-                <li>asdasdasdasd</li>
-                <li>asdasdasdasd</li>
-            </ul>
-        </div></div>
-
+            <p>Hello <?php echo $_SESSION['username']?></p>
+        </div>
+        <div><?php include("./include/usercount.inc.php"); ?></div>
+    </div>
             </main>
            <?php include ("../components/footer.php"); ?>
         </body>
