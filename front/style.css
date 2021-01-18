@@ -13,7 +13,7 @@
     --inverse:#292b2c;
     --faded:#f7f7f7;
     --light:#eef2f7;
-    --gray: rgb(177, 177, 177);
+    --gray: rgb(177, 177, 177); 
 }
 
 button{
@@ -422,7 +422,7 @@ footer{
     font-weight: 700;
     
 }
-.login-box .info{
+.info{
     font-size: normal;
     background:var(--warning);
     color: var(--danger);
@@ -467,6 +467,9 @@ footer{
     position: relative;
     cursor:pointer;
 }
+.dashbar{
+    background-color:var(--faded);
+}
 .dashnav{
     display: flex;
     width:2.5%;
@@ -478,7 +481,6 @@ footer{
     list-style: none;
     padding: 1rem 1rem 0 1rem;
     margin:0 0 0 0.5rem;
-    color:var(--inverse);
     z-index: 0;
 }
 .dashnav a{
@@ -489,7 +491,7 @@ footer{
     align-items:center;
     padding:1rem;
     text-decoration: none;
-    color:black;
+    color:var(--inverse);
     transition: 400ms;
 }
 .dashnav a:hover{
@@ -507,12 +509,14 @@ footer{
     flex-direction: column;
     background: #eef2f7;
     margin: 1rem 1rem 1rem 1rem;
-    box-shadow: 0 0 5px 1px black;  
+    box-shadow: 0 0 5px 1px black; 
     width:100%;
     background-size:cover;
     background-image: url(./imgs/login-wallpaper.jpg);
     background-repeat: no-repeat;
+    overflow-x: auto;
 }
+
 .row{
     display:flex;
     flex-direction:row;
@@ -535,6 +539,7 @@ footer{
     flex-wrap: wrap;
 }
 .items-form *{
+    width:auto;
     margin:auto;
 }
 .items-form span label{
