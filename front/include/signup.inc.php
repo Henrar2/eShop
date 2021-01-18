@@ -35,7 +35,7 @@ if(isset($_POST['signup'])){
             header("Location:../signup.php?error=sqlerror");
             exit();
         }else{
-            mysqli_stmt_bind_param($stmt,"ss",$username,$mail);
+            mysqli_stmt_bind_param($stmt,"ss",strtolower($username),strtolower($mail));
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $result = mysqli_stmt_num_rows($stmt);
@@ -50,7 +50,7 @@ if(isset($_POST['signup'])){
                     exit();
                 }else{
                     $hashedpassword = password_hash($password,PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt,"sss",$username,$hashedpassword,$mail);
+                    mysqli_stmt_bind_param($stmt,"sss",strtolower($username),$hashedpassword,strtolower($mail));
                     mysqli_stmt_execute($stmt);
                     header("Location:../signin.php?signup=success");
                     exit();

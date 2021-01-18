@@ -16,7 +16,7 @@ if(isset($_POST['login'])){
         }
         else{
 
-            mysqli_stmt_bind_param($stmt,"ss",$username,$username);
+            mysqli_stmt_bind_param($stmt,"ss",strtolower($username),strtolower($username));
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if($row=mysqli_fetch_assoc($result)){
@@ -43,7 +43,7 @@ if(isset($_POST['login'])){
     mysqli_stmt_close($stmt);
     mysqli_close($con);
 }else{
-    header("Location: ../signin.php");
+    header("Location: ./../signin.php");
     exit();
 }
 ?>
