@@ -2,18 +2,18 @@
 function navHandle(){
     var el = document.getElementsByClassName("text");
     var dash = document.getElementById("dashbar");
-    dash.style.transition="400ms";
+    dash.style.transition="200ms";
     if(dash.style.width=="6rem"){
         //Hide the items first
         for(let i=0;i<el.length;i++){
-            el[i].style.transisition = "400ms";
+            el[i].style.transisition = "200ms";
             el[i].style.display = "none";
         }
         // wait 400ms
         setTimeout(function(){
             //Expand DashBar 
             dash.style.width="2.5%";
-        },400);   
+        },200);   
     }else{
         // Expand DashBar first
         dash.style.width="6rem";
@@ -21,10 +21,10 @@ function navHandle(){
         setTimeout(function(){
             //Display all items
             for(let i=0;i<el.length;i++){
-                el[i].style.transisition = "400ms";
+                el[i].style.transisition = "200ms";
                 el[i].style.display = "inline";
             }
-        },400);
+        },200);
     }     
 }
 
