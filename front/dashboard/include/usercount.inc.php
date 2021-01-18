@@ -1,14 +1,12 @@
 <?php
 if(!isset($_SESSION['userid'])){
     header("Location: ../signin.php");
-// }elseif(isset($_SESSION['accesslevel']) && $_SESSION['accesslevel']!=1){
-//     header("Location:./users.php");
 }elseif(isset($_SESSION['accesslevel']) && $_SESSION['accesslevel']==1){
     require '../include/config.php';
     $sql = "SELECT id,username,mail FROM user";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-        echo "Something went wrong";
+        header("Location:./../items.php?error=sqlError");
     }else{
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
