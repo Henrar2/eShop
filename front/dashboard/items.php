@@ -30,8 +30,29 @@ session_start();
         </head>
         <body>
         <?php
+            if(isset($_GET['submit']) && $_GET['submit']=="success"){
+                $submit = "Item added successfully!";
+            }
              if(isset($_GET['error']) && $_GET['error']=='emptyfields'){
                 $errors = "Please fill all the fields";
+             }elseif(isset($_GET['error']) && $_GET['error']=='sqlerror'){
+                $errors = "Sql Error!Either server died or a field is longer than expected.";
+             }
+             elseif(isset($_GET['error']) && $_GET['error']=='sqlerror'){
+                $errors = "Sql Error!Either server died or a field is longer than expected.";
+             }elseif(isset($_GET['error']) && $_GET['error']=='notanimg'){
+                $errors = "You must add an image!";
+             }
+             elseif(isset($_GET['error']) && $_GET['error']=='wrongformat'){
+                $errors = "Format error.Accepted image formats are .png .jpg .jpeg";
+             }
+             elseif(isset($_GET['error']) && $_GET['error']=='toobig'){
+                $errors = "Your image must be smaller than 500kb";
+             }
+             elseif(isset($_GET['error']) && $_GET['error']=='toobig'){
+                $errors = "Your image must be smaller than 500kb";
+             }elseif(isset($_GET['error']) && $_GET['error']=='smthwrong'){
+                $errors = "If you got this error you are really messing this up!";//Cant get this error no matter what
              }
         ?>
         <!-- Header -->
@@ -44,7 +65,8 @@ session_start();
     <!-- POST ITEMS FORM -->
     <div class="mainbody" bis_skin_checked="1">
         <h1 style="text-align:center;">Add an Item</h1><br>
-        <p id="message" class="info";><?php if(isset($errors)){echo $errors;}else{ ?><script>document.getElementById("message").style.backgroundColor="transparent"</script><?php }?></p>
+        <p id="errorMsg" style="width:40rem;margin:auto;margin-bottom:2rem"; class="info"><?php if(isset($errors)){echo $errors;}else{ ?><script>document.getElementById("errorMsg").style.backgroundColor="transparent"</script><?php }?></p>
+        <p id="successMsg" class="info"style="width:40rem;margin:auto;margin-bottom:2rem;background-color:var(--success);color:var(--primary);"><?php if(isset($submit)){echo $submit;}else{ ?><script>document.getElementById("successMsg").style.backgroundColor="transparent"</script><?php }?></p>
         <form class="items-form" method="POST" action="./include/items.inc.php" enctype="multipart/form-data">
             <span class="col">
                 <label for="item-name">Name</label>
