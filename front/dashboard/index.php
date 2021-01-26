@@ -33,21 +33,35 @@ session_start();
         <!-- Header -->
         <?php include ("../components/header.php"); ?>
 
+<?php 
+    function getCount($table,$id){
+        if(!isset($_SESSION['userid'])){
+            header("Location: ../signin.php");
+        }elseif(isset($_SESSION['accesslevel']) && $_SESSION['accesslevel']==1){
+            require '../include/config.php';
+            $sql = "SELECT count($id) as count FROM $table WHERE 1";
+            $stmt = mysqli_stmt_init($con);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("Location:./index.php?error=sqlError");
+            }else{
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                $row = mysqli_fetch_assoc($result);
+                echo $row['count'] ;
+                }
+        }
+        mysqli_stmt_close($stmt);
+        mysqli_close($con);
+    }
+?>
             
     <main style="margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
         <?php include ("../components/dashnav.php"); ?>
     <div class="mainbody" bis_skin_checked="1">
         <h1 style="margin:2rem 1rem 1rem 2rem">Hello <?php echo $_SESSION['username']; ?>!<br><br>Welcome to your Dashboard</h1>
         <div class="row">
-            <div class="item row">This is a content<p>this is 2</p></div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-            <div class="item row">This is a content</div>
-        </div>
+            <div class="item row">Users Count:<br><br><?php getcount('user','id');?></div>
+            <div class="item row">Items Count:<br><br><?php getcount('item','id');?></div>
     </div>
             </main>
            <?php include ("../components/footer.php"); ?>
