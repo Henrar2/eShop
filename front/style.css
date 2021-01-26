@@ -230,7 +230,6 @@ main{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 .card{
     width:18rem;
@@ -238,7 +237,6 @@ main{
     padding:0.5em 1rem;
     background-color: white;
     border-radius: 21px;
-    border:1px solid silver;
     box-shadow: 1px 2px 5px black;
 }
 .card-body{
@@ -246,16 +244,21 @@ main{
     flex-direction: column;
 }
 .card img{
-    width:18rem;
-    border-bottom: 1px solid silver;
+    max-width:18rem;
 }
 .card-title{
-    font-size: 1.1em;
+    font-family: 'serif';
+    font-size: 1.3em;
     font-weight: 900;
 }
 .card-text{
-    font-size: 0.90em;
-    font-weight:600;
+    font-family: 'serif';
+    font-size: 1em;
+    font-weight:500;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    line-height:1em;
+    height:2em;
 }
 .card a{
     margin:0 0 1rem 0;
@@ -303,9 +306,6 @@ main{
     color:white;
     background-color:var(--success);
     border-color: green;
-}
-.btn-info{
-    
 }
 @media screen and (max-width: 900px){
     .login{
@@ -424,7 +424,7 @@ footer{
 }
 .info{
     font-size: normal;
-    background:var(--warning);
+    background-color:var(--warning);
     color: var(--danger);
     text-align:center;
     width:100%;
@@ -625,4 +625,7 @@ input[type=number] {
     text-align: left;
     background-color: var(--info);
     color: rgb(240, 240, 240);
+}
+input[type="file"],button[type="submit"]{
+    cursor:pointer;
 }
