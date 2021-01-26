@@ -37,7 +37,7 @@
                     }
                     if($_FILES['fileToUpload']['size']>500000){
                         $uploadOk = 0;
-                        header("Location:./../items.php?error=tobig&name=".$name."&desc=".$desc."&price=".$price."&quantity=".$quantity);
+                        header("Location:./../items.php?error=toobig&name=".$name."&desc=".$desc."&price=".$price."&quantity=".$quantity);
                         exit();
                     }
                 }
