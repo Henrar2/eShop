@@ -33,11 +33,10 @@ session_start();
         <?php include ("../components/header.php"); ?>
 
             
-    <main style=" /*background-color:red;*/;margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
+    <main style="margin: 1rem 0 1rem 0;display: flex;flex-direction: row;height: 100%;min-height: 80vh;box-shadow: 1px 1px 2px 2px black;">
         <?php include("../components/dashnav.php"); ?>
     <div class="mainbody" bis_skin_checked="1">
         <div class="maincontent" bis_skin_checked="1">
-            <p>Hello <?php echo $_SESSION['username']?></p>
         </div>
         <div><?php include("./include/usercount.inc.php"); ?></div>
     </div>
